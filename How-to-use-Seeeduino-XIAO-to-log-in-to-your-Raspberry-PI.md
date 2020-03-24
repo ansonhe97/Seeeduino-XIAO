@@ -51,7 +51,7 @@ void setup() {
 
   // put your setup code here, to run once:
   SerialUSB.begin(115200);
-  baud = SerialUSB.getBaud();
+  baud = SerialUSB.baud();
   old_baud = baud;
   Serial1.begin(baud);
   while (!Serial);
@@ -60,7 +60,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  baud = SerialUSB.getBaud();
+  baud = SerialUSB.baud();
   if (baud != old_baud) {
     Serial1.begin(baud);
     while (!Serial);
